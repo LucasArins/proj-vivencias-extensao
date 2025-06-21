@@ -14,6 +14,7 @@ public class Empresa {
     private String nome;
     private String email;
     private String cnpj;
+    private String endereco;
     private String senha;
 
     @OneToMany(mappedBy = "empresa")

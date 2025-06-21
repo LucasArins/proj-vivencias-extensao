@@ -24,18 +24,18 @@ public class EventoController {
 
     @GetMapping("/recentes")
     public Page<Evento> recentes(Pageable pageable) {
-        return eventoRepository.findByOrderByDataDesc(pageable);
+        return eventoRepository.findByOrderByDataTerminoDesc(pageable);
     }
 
     @GetMapping
     public Page<Evento> filtrar(
-        @RequestParam(required = false, defaultValue = "") String cidade,
+        @RequestParam(required = false, defaultValue = "") String endereco,
         @RequestParam(required = false, defaultValue = "") String categoria,
-        @RequestParam(required = false) LocalDate data,
+        @RequestParam(required = false) LocalDate dataTermino,
         Pageable pageable
     ) {
-        return eventoRepository.findByCidadeContainingAndCategoriaContainingAndData(
-            cidade, categoria, data, pageable
+        return eventoRepository.findByEnderecoContainingAndCategoriaContainingAndData(
+            endereco, categoria, dataTermino, pageable
         );
     }
 

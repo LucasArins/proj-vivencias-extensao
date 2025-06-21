@@ -20,9 +20,13 @@ public class Evento {
     private Long id;
 
     private String nome;
-    private String cidade;
+    private String duracao;
+    private int capacidade;
+    private boolean acesso;
+    private String endereco;
     private String categoria;
-    private LocalDate data;
+    private LocalDate datainicio;
+    private LocalDate datatermino;
     private boolean destaque;
 
     @ManyToOne

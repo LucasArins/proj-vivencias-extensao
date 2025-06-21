@@ -7,5 +7,6 @@ public class EmpresaUpdateDTO {
     private String nome;
     private String email;
     private String cnpj;
+    private String endereco;
     private String senha;
 }

@@ -32,7 +32,6 @@ public class UsuarioController {
         Usuario usuario = usuarioRepository.findById(id).orElseThrow();
         usuario.setNome(dto.getNome());
         usuario.setEmail(dto.getEmail());
-        usuario.setUsername(dto.getUsername());
         usuario.setSenha(dto.getSenha());
         return usuarioRepository.save(usuario);
     }

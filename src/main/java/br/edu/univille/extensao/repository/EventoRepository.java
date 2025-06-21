@@ -10,8 +10,8 @@ import br.edu.univille.extensao.entity.Evento;
 
 public interface EventoRepository extends JpaRepository<Evento, Long> {
     Page<Evento> findByDestaqueTrue(Pageable pageable);
-    Page<Evento> findByOrderByDataDesc(Pageable pageable);
-    Page<Evento> findByCidadeContainingAndCategoriaContainingAndData(
-        String cidade, String categoria, LocalDate data, Pageable pageable
+    Page<Evento> findByOrderByDataTerminoDesc(Pageable pageable);
+    Page<Evento> findByEnderecoContainingAndCategoriaContainingAndData(
+        String endereco, String categoria, LocalDate dataTermino, Pageable pageable
     );
 }
